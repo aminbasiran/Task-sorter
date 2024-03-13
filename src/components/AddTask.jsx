@@ -1,36 +1,49 @@
 import React,{useState} from 'react'
 
-const AddTask = ({tasks, setTasks}) => {
+const AddTask = ({tasks, setTasks,text,setText,saveTasksToLocalStorage}) => {
 
-    const [text,setText] = useState("")
 
     const addToList = () => {
         if(!text){
-            return alert("Add tasks")
+            alert("Add tasks")
+            return 
         }
 
         if(tasks.includes(text)){
+            alert("Task existed in database")
             setText("")
-            return alert("Task existed in database")
+            return 
         }
 
-        setTasks(prev => [...prev, text ])
+        setTasks(prevTasks => {
+            const updatedTasks = [...prevTasks, text];
+            saveTasksToLocalStorage(updatedTasks); // Save tasks to localStorage
+            return updatedTasks; // Return updated tasks array
+        });
+        
         setText("")
     }
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            if(!text){
-                return alert("add tasks")
-            }
-
-            if(tasks.includes(text)){
-                setText("")
-                return alert("Task existed in database")
+            if (!text) {
+                alert("Please add a task");
+                return;
             }
     
-            setTasks(prev => [...prev, text ])
-            setText("")
+            if (tasks.includes(text)) {
+                alert("Task already exists");
+                setText("");
+                return;
+            }
+    
+            setTasks(prevTasks => {
+                const updatedTasks = [...prevTasks, text];
+                saveTasksToLocalStorage(updatedTasks); // Save tasks to localStorage
+                return updatedTasks; // Return updated tasks array
+            });
+    
+            setText("");
         }
     };
 
