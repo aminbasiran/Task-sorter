@@ -21,6 +21,13 @@ function App() {
     setFrequentElement({})
   }
 
+  function handleClearAll(){
+    setTasks([])
+    setFrequencyStore([])
+    setPrioritize(false)
+    setFrequentElement([])
+  }
+
   return (
     <div className='flex flex-col gap-2 '>
       <div className='flex flex-col items-start'>
@@ -32,14 +39,13 @@ function App() {
           <TaskLists tasks={tasks} setTasks={setTasks}/>
           <button onClick={handleOpenTextBox} className='text-xs px-2 py-1 rounded-md text-white font-semibold bg-cyan-600' type='button'>Prioritize</button>
           {prioritize && <TextBox tasks={tasks} setPrioritize={setPrioritize} setFrequentElement={setFrequentElement} frequencyStore={frequencyStore} setFrequencyStore={setFrequencyStore}/> }
-          {frequentElement && 
-          <div>
+          {Object.keys(frequentElement).length !== 0 && 
             <ol>
                   {Object.keys(frequentElement).map((task,index) => <li key={index} className='text-xs font-semibold'>{task}</li>)}
             </ol>
-            
-          </div>
           }
+          {Object.keys(frequentElement).length !== 0 && <button onClick={handleClearAll} className='text-xs px-2 py-1 flex-1 rounded-md text-white font-semibold bg-orange-600' type='button'>Clear all</button>}
+
       </div>
     </div>
   )

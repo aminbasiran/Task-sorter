@@ -62,12 +62,11 @@ const TextBox = ({tasks,setFrequencyStore,frequencyStore,setFrequentElement,setP
 
     return (
         <div className='flex flex-col gap-4 items-center bg-zinc-200 p-4 rounded-md'>
-            <div className='flex flex-row gap-3 items-center justify-center'>
-                <h1 className='text-xs font-semibold'>is</h1>
+            <div className='flex flex-col gap-3 items-center justify-center'>
+                <h1 className='text-xs text-zinc-500 font-semibold'>is</h1>
                 <h1 className='rounded-md font-semibold text-2xl'>{tasks[currentIndex]}</h1>
-                <h1 className='text-xs font-semibold'>more important than</h1>
-                <h1 className='rounded-md font-semibold text-2xl'>{tasks[nextIndex]}</h1>
-                <h1 className=' font-semibold'>?</h1>
+                <h1 className='text-xs text-zinc-500 font-semibold'>more important than</h1>
+                <h1 className='rounded-md font-semibold text-2xl'>{tasks[nextIndex]}?</h1>
             </div>
             <div className='flex flex-row gap-3'>
                 <button onClick={handleYes} className='w-16 text-xs px-2 py-1 rounded-md cursor-pointer text-white font-semibold bg-cyan-600'>Yes</button>
