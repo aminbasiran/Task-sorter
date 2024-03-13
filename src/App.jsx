@@ -24,8 +24,8 @@ function App() {
   return (
     <div className='flex flex-col gap-2 '>
       <div className='flex flex-col items-start'>
-        <h1 className='text-cyan-500 text-5xl font-extrabold'>Task Sorter</h1>
-        <h1 className='text-md font-semibold text-zinc-500'>Your friendly sorter!</h1>
+        <h1 className='text-cyan-500 text-5xl font-extrabold'>Sortify!</h1>
+        <h1 className='text-md font-semibold text-zinc-500'>Your friendly task sorter!</h1>
       </div>
       <div className='flex flex-col gap-2 p-3 bg-white shadow-lg rounded-md flex-grow'>
           <AddTask tasks={tasks} setTasks={setTasks}/>
