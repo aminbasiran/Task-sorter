@@ -8,6 +8,8 @@
   line-height: 1.5;
   font-weight: 400;
 
+  overflow-x: hidden;
+
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background-color: #FAFBFC;
@@ -25,6 +27,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  overflow-x: hidden;
 }
 
 input[type="text"]:focus {
