@@ -44,9 +44,9 @@ function App() {
                   {Object.keys(frequentElement).map((task,index) => <li key={index} className='text-xs font-semibold'>{task}</li>)}
             </ol>
           }
-          {Object.keys(frequentElement).length !== 0 && <button onClick={handleClearAll} className='text-xs px-2 py-1 flex-1 rounded-md text-white font-semibold bg-orange-600' type='button'>Clear all</button>}
 
       </div>
+          {Object.keys(frequentElement).length !== 0 && <button onClick={handleClearAll} className='text-xs px-2 py-1 w-1/4 mx-auto rounded-md text-white font-semibold bg-orange-600' type='button'>Clear all</button>}
     </div>
   )
 }
