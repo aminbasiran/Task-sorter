@@ -1,10 +1,7 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 
-const AddTask = ({tasks, setTasks,text,setText,saveTasksToLocalStorage,setToast}) => {
-
-    
-
+const AddTask = ({tasks, setTasks,text,setText,saveTasksToLocalStorage}) => {
     const addToList = () => {
         if(!text){
             alert("Add tasks")
@@ -22,14 +19,12 @@ const AddTask = ({tasks, setTasks,text,setText,saveTasksToLocalStorage,setToast}
             return updatedTasks; // Return updated tasks array
         });
         
-        
-        setToast(prev => !prev)
+    
         setText("")
 
-        setTimeout(() => {
-            setToast(prev => !prev)
-        }, 2000);
     }
+
+    
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
@@ -51,12 +46,7 @@ const AddTask = ({tasks, setTasks,text,setText,saveTasksToLocalStorage,setToast}
             });
             
             
-            setToast(prev => !prev)
             setText("");
-
-            setTimeout(() => {
-                setToast(prev => !prev)
-            }, 2000);
         }
     };
 
